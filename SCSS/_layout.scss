@@ -1,0 +1,295 @@
+$linkcolor:#c7dcd1;
+$linkfontcolor:#555857;
+$linkiphone-h2:20px;
+$linkiphone-p:13px;
+$link-h2:30px;
+$linkfont:cursive;
+@mixin pad{
+	@media (max-width: 768px) {
+		@content
+	}
+}
+
+@mixin iphoneX{
+	@media(max-width: 376px){
+		@content
+	}
+}
+.wrap{
+	max-width: 1024px;
+	margin: 0 auto;
+	background-color: #EFE9E7;
+
+}
+
+.header{
+	display:flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	// height: 300px;
+	// background-color:$linkcolor;
+	position: relative;
+
+	
+	}
+	.bar{
+		width: 100%;
+		// height: 60px;
+		display: flex;
+		justify-content:space-between;
+		background-color:rgba(255,255,255,0.8);
+		z-index: 97;
+		@include pad(){
+		    	height:auto;
+		    }
+
+		h1{
+			a{
+			background-image: url(../imgs/logo-243.svg);
+			background-repeat: no-repeat;
+			display: block;
+			background-size: 100%;
+			width: 120px;
+			padding-bottom: 30px;
+			@include hide-indent;
+			margin-left: 10px;
+			margin-top:3px;
+		    }
+		}
+
+		.menu{
+			display: flex;
+			@include pad(){
+				max-height:0;
+				display:block;
+				overflow: hidden;
+				text-align: center;
+				transition: max-height 1.5s ease;
+				position: absolute;
+				z-index: 100;
+				right: 0;
+				left: 0;
+				top: 49px;
+				background-color: rgba(199,220,209,0.8);
+			}
+			li{
+				padding:0 0 0 3px;
+				a{
+					padding:17px 0px;
+					width: 100px;
+					font-size: 18px;
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					text-decoration: none;
+					color: #000000;
+					font-weight: bold;
+
+					
+					&:hover{
+
+						background-color: $linkcolor;
+						opacity: 0.5;
+						color: $linkfontcolor;
+						transition:0.7s ease;
+					}
+					i{
+						font-size: 14px;
+						padding-right: 2px;
+					}
+					@include pad(){
+						padding:10px 0;
+						width: 100%;
+						color:$linkfontcolor;
+					}
+				}
+				
+		    }
+		}
+		.show-menu{
+			display: none;
+			@include pad(){
+				display: flex;
+			    flex-wrap: wrap;
+			    width: 40px;
+			    margin: 8px 6px 0 0;
+			    li{
+				   display: flex;
+				   width: 40px;
+				   height: 4px;
+				   margin:2px 0px;
+				   border-radius: 100px;
+				   background-color:#3f5d45;
+			    }
+			    &:hover{
+			    	cursor: pointer;
+			    }
+			}
+		}	
+}
+.menuList .menu{
+ 	max-height: 153px;
+ }
+.banner{
+	background-image: url(../imgs/banner.jpg);
+	background-repeat: no-repeat;
+	background-size:cover;
+	width: 100%;
+	height: 0;
+	padding-bottom: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	margin-top: -52px;
+	@include pad(){
+		padding-bottom: 45%;
+	}
+	@include iphoneX(){
+		background-image: url(../imgs/banner-s.jpg);
+		padding-bottom: 70%;
+	}
+	.inner-box{
+		text-align: center;
+		width:50%;
+		// height: auto;
+		background-color: rgba(255,255,255,0.8);
+		margin-top: 370px;
+		padding:30px 0;
+		border-radius: 2%;
+		box-shadow:0px 4px 4px -1.5px #8e8e8e;
+		@include pad(){
+			margin-top: 350px;
+			width:53%;
+		}
+		@include iphoneX(){
+			margin-top: 300px;
+			width:100%;
+		}
+		h2{
+			font-size: $link-h2;
+			letter-spacing: 0.2em;
+			font-weight: bold;
+			margin-bottom: 35px;
+
+			@include pad(){
+				font-size: 28px;
+				letter-spacing: 0.1em;
+			}
+			@include iphoneX(){
+				font-size:$linkiphone-h2;
+				letter-spacing:0.1em;
+				margin-bottom: 20px;
+			}
+		}
+		p{
+			font-size: 20px;
+			margin-top:10px;
+			letter-spacing: 0.2em;
+			span{
+				color: #3f5d45;
+			}
+			@include iphoneX(){
+				font-size:$linkiphone-p;
+				margin-top:5px;
+			}
+		}
+
+	}
+
+}
+.footer{
+	width:100%;
+	display: flex;
+	justify-content: space-around;
+	padding-top:20px;
+	height: auto;
+	background-color: $linkcolor;
+	color:$linkfontcolor;
+
+	@include iphoneX(){
+				justify-content: center;
+				flex-wrap: wrap;
+				text-align: center;
+			}
+	.aboutus{
+		width: 20%;
+		margin-bottom: 10px;
+		@include pad(){
+				width: 30%;
+			}	
+		@include iphoneX(){
+				width: 100%;
+				padding:0px 20px;
+			}	
+		h4{
+			font-size:25px;
+			margin-bottom: 10px;
+		}
+	
+		p{
+			@include iphoneX(){
+				text-align: left;
+			}
+		}
+	}
+	.contact{
+		width: 30%;
+		margin-bottom: 10px;
+		@include iphoneX(){
+				width: 100%;
+				padding:0px 20px;
+			}
+		h5{
+			font-size:20px;
+			margin-bottom: 10px;
+			@include iphoneX(){
+				margin-top: 15px;
+			}
+		}
+		ul{
+			list-style: disc;
+			margin-left: 1.5em;
+			li{
+				padding:2px 0;
+			}
+			@include iphoneX(){
+				text-align: left;
+			}
+
+		}
+	}
+	.soical-Link{
+		width:10%;
+		display:flex;
+		flex-wrap:wrap;
+		justify-content: flex-end;
+		align-content: flex-start;
+		@include pad(){
+			width: 20%;
+			padding-left:10px;
+
+		}	
+		@include iphoneX(){
+			width: 50%;
+			justify-content: center;
+		}
+		
+		>img{
+			// display: flex;
+			align-self: center;
+			margin-bottom: 10px;
+			margin-top:10px;
+			width: 243px;
+			height: 51px;
+			@include iphoneX(){
+				margin-bottom: 5px;
+				padding:0 5px;
+			}
+
+		}
+		a{
+			padding:3px;
+
+		}
+	}
+}

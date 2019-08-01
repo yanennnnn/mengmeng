@@ -1,0 +1,122 @@
+@import 'reset';
+@import 'mixin';
+@import 'layout';
+
+.login{
+	width: 70%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin:0 auto;
+	@include iphoneX(){
+		width: 100%;
+	}
+	.log-tit{
+		margin:10px 0;
+		width: 50%;
+		display: flex;
+		justify-content: center;
+		padding:0 40px;
+		flex-wrap: wrap;
+		@include iphoneX(){
+			width:70%;
+		}
+		p{
+			margin-top: -10px;
+		}
+	}
+	form{
+		padding:15px 15px;
+		width: 50%;
+		margin:20px 20px 50px 20px;
+		background-color: $linkcolor;
+		border-top:2px solid green;
+		// border-bottom:2px solid green;
+		box-shadow: 3px 3px 5px -1px gray;
+		@include pad(){
+			width: 70%;
+		}
+		@include iphoneX(){
+			width:90%;
+		}
+		p{
+			text-align: center;
+			font-size: 30px;
+			font-weight: bold;
+			margin-bottom: 35px;
+			margin-top:10px;
+		}
+		label{
+			display: block;
+			margin-top:20px;
+			font-size: 18px;
+			
+			span{
+				color:red;
+				padding-left: 3px;
+			}
+		}
+		#email,#psw{
+			height: 32px;
+			width: 95%;
+			border-radius: 2px;
+			border:none;
+			margin-top: 8px;
+			text-indent: 34px;
+		
+		}
+		.i-email{
+			position: relative;
+			&:before{
+				font-family: "FontAwesome";
+				content: "\f0e0";
+				position: absolute;
+				font-size: 18px;
+				top:33px;
+				left: 7px;	
+				color:gray;
+			}
+		}
+		.i-psw{
+			position: relative;
+			&:before{
+				font-family: "FontAwesome";
+				content: "\f023";
+				position: absolute;
+				font-size: 18px;
+				top:33px;
+				left: 7px;	
+				color:gray;
+			}
+		}
+		a{
+			display: block;
+			font-size:14px;
+			text-decoration: none;
+			color:red;
+			margin:10px 0 15px 0;
+			&:hover{
+				color:brown;
+			}
+		}
+		input[type=submit],input[type=button]{
+	    	padding:5px 10px;
+	    	border:none;
+	    	border-radius: 5px;
+	    	cursor: pointer;
+	    	color:#ffffff;
+	    	margin-left: 10%;
+	    	margin-top: 5%;
+	    	margin-bottom: 5%;
+	    	width: 40%;
+	    	height: 30px;
+		}
+		input[type=button]{
+	    	background-color:orange;
+	    	margin-left: 5%;
+		}
+		input[type=submit]{
+			background-color:green;
+		}
+	}
+}

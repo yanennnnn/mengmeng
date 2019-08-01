@@ -1,0 +1,364 @@
+@import 'reset';
+@import 'mixin';
+@import 'layout';
+
+.feature{
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	position: relative;
+	.feature-title{
+		margin-top: 10px;
+		text-align: center;
+		font-family: $linkfont;
+		&:before{
+			width: 14%;
+			border-bottom: 2px solid $linkcolor;
+			content:"";
+			// height: 5px;
+			position:absolute;
+			top:11%;
+			left: 20%;
+			@include pad(){
+				left: 17%;
+			}
+			@include iphoneX(){
+				top:3%;
+				left: 10%;
+			}
+		}
+		&:after{
+			width: 14%;
+			border-bottom: 2px solid $linkcolor;
+			content:"";
+			// height: 5px;
+			position:absolute;
+			top:11%;
+			right: 20%;
+			@include pad(){
+				right: 17%;
+			}
+			@include iphoneX(){
+				top:3%;
+				right: 10%;
+			}
+		}
+		h2{
+			display:block;
+			font-size:$link-h2;
+			@include iphoneX(){
+				// font-size:$linkiphone-h2;
+			}
+	
+	    }
+	    	
+	    span{
+	        margin-top: 10px;
+	        display:block;
+		    font-size:25px;
+		    @include iphoneX(){
+				font-size:20px;
+			}
+	    }
+	}
+	ul{
+		width: 90%;
+		margin-top: 20px;
+		display: flex;
+		justify-content: space-around;
+		@include pad(){
+			// justify-content: center;
+		}
+		@include iphoneX(){
+			flex-wrap: wrap;
+			flex-direction: row;
+		}
+		li{
+			width:30%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding:0 20px;
+			line-height: 1.5em;
+			 @include pad(){
+				// width: 20%;
+				padding:0 10px;
+				// margin:0 10px;
+			}
+			@include iphoneX(){
+				width:90%;
+				margin-bottom:20px; 
+			}
+
+			img{
+				align-self: center;
+				border-radius: 50%;
+				margin-bottom: 10px;
+				// padding:0 30px;
+				@include pad(){
+					// padding:0;
+				}
+
+			}
+			span{
+				text-align: center;
+				font-weight: bold;
+				font-size:18px;
+				margin-bottom:10px;
+
+			}
+
+			
+		}
+	}
+
+	
+}
+.service{
+	// width: 100%;
+	margin:0 10px;
+	background-color: $linkcolor;
+	border-radius: 25px;
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+	@include pad(){
+		// flex-direction: columns;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	img{
+		margin:20px 25px;
+		// width: 50%;
+		// height: 40%;
+		border-radius: 25px;
+		box-shadow: 0px 2px 5px 1px #555857;
+		@include iphoneX(){
+			margin:20px 0;
+			width: 90%;
+		}
+	}
+	span{
+		writing-mode: vertical-lr;
+		font-size: 40px;
+		color:$linkfontcolor;
+		font-family: $linkfont;
+		font-weight: bold;
+		@include pad(){
+			// writing-mode:horizontal-tb;
+			// display: flex;
+			// justify-content: center;
+			font-size: 50px;
+			
+		}
+		@include iphoneX(){
+			writing-mode:horizontal-tb;
+			display: flex;
+			justify-content: center;
+			font-size: 30px;
+		}
+	}
+	.letter-hight{
+		margin: -3em 0.3em 0 0.5em;
+		@include pad(){
+			margin-top: -1.9em;
+			margin-left: 0em;
+		}
+		@include iphoneX(){
+			margin-left: 0em;
+			margin-top: -1em;
+		}
+	}
+	.letter-low{
+		margin-top: 3em;
+		@include iphoneX(){
+			 margin-top:1.8em;
+			 margin-left: -1.5em;
+		}
+	}
+	p{
+		font-size: 18px;
+		padding-right: 16px;
+		line-height: 1.8em;
+		@include pad(){
+			padding:5px 30px 20px 30px;
+		} 
+	}
+}
+.avatar{
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	flex-direction: columns;
+	flex-wrap: wrap;
+	position: relative;
+	&:before{
+		content: '';
+		position: absolute;
+		width: 14%;
+		border-bottom: 2px solid $linkcolor;
+		left: 20%;
+		top:7%;
+		@include pad(){
+			top:6%;
+		}
+		@include iphoneX(){
+			top:2.5%;
+			left:5%;
+		}
+	}
+
+	&:after{
+		content: '';
+		position: absolute;
+		width: 14%;
+		border-bottom: 2px solid $linkcolor;
+		right: 20%;
+		top:7%;
+		@include pad(){
+			top:6%;
+		}
+		@include iphoneX(){
+			top:2.5%;
+			right:5%;
+		}
+	}
+
+	h2{
+		font-size: $link-h2;
+		font-family: $linkfont;
+	}
+	ul{
+		display: flex;
+		justify-content: space-around;
+		width: 90%;
+		@include iphoneX(){
+			flex-wrap: wrap;
+			flex-direction: row;
+			margin-top:20px;
+		}
+		li{
+			width: 30%;
+			display: flex;
+			align-items: flex-start;
+			// padding: 0 20px;
+			padding: 10px 20px;
+			@include pad(){
+				padding: 10px 0px 10px 20px;
+			}
+			@include iphoneX(){
+				width: 95%;
+				padding:0 20px;
+			}
+		}
+		img{
+			border-radius: 50%;
+			margin-right: 10px
+
+		}
+		span{
+			display: block;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		p{
+			padding:3px;
+
+		}
+		.avatar-name{
+			text-align: right;
+			margin-bottom: 10px;
+		}
+	}
+
+}
+.online-check{
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding-bottom: 20px;
+	background-color: #fff;
+	@include iphoneX(){
+		padding-bottom: 60px;
+	}
+	h2{
+		width: 100%;
+		display:block;
+		font-size:$link-h2;
+		font-family: $linkfont;
+		text-align: center;
+		margin: 30px 0 10px 0;
+	}
+	iframe{
+		padding: 10px 30px 20px 50px;
+		@include iphoneX(){
+			width: 90%;
+			height: 300px;
+			padding:20px
+		}
+	}
+	form{
+		display: block;
+		width:45%;
+		height: auto;
+		margin-top:5px;
+		@include iphoneX(){
+			width: 90%;
+			padding-left:30px;
+
+	    }
+		label{
+		    display: block;
+		    margin: 10px 0 5px 0;
+	    }
+	    #name,#tel,#email,#num{
+	    	height: 10%;
+	    	width: 80%;
+	    	@include iphoneX(){
+	    		height: 13%;
+	    	}
+
+	    }
+	    input{
+	    	padding-left: 5px;
+	    	font-size:17px;
+	    	border-radius: 2px;
+	    	border: 1px solid gray;
+	    	&:focus{
+	    		// background-color:$linkcolor;
+	    		outline:2px solid green; //預設值
+	    	}
+	    }
+	    input[type=radio]{
+	    	background-color: #000;
+	    }
+	    input[type=submit],input[type=button]{
+	    	float:right;
+	    	padding:5px 10px;
+	    	border:none;
+	    	border-radius: 5px;
+	    	cursor: pointer;
+	    	color:#ffffff;
+
+	    }
+	    .send{
+	    	margin-right: 90px;
+	    	margin-left: 10px;
+	    	background-color:orange;
+	    	@include iphoneX(){
+	    		margin-right: 60px;
+	    	}
+	    }
+	    .cancle{
+	        background-color: grey;
+	    }
+	}
+
+} 
+.clearfix{
+		@include clearfix;
+}
