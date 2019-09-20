@@ -1,18 +1,15 @@
-@import 'reset';
-@import 'mixin';
-@import 'layout';
+
 
 .online-shop{
 	
 	display: flex;
 	flex-wrap:wrap;
-	width:90%;
 	margin:0 auto;
 	margin-top: 50px;
 	@include pad(){
 		justify-content: center;
 	}
-	@include iphoneX(){
+	@include iphone6(){
 		// flex-wrap:wrap;
 	}
 }
@@ -20,7 +17,8 @@
 	width: 30%;
 	margin-left: 3%;
 	@include pad(){
-		width: 100%;
+		margin-left: 0;
+		width: 90%;
 	}
 	h3{
 		text-align: center;
@@ -37,26 +35,25 @@
 		flex-wrap: wrap;
 	    @include pad(){
 		    width: 100%;
-		    margin:3% 15%;
+		    margin:3% 0;
+		    justify-content: center;
 		}
-	    @include iphoneX(){
-			justify-content: center;
-			// flex-direction: row;
-			margin:3% 0;
-	    }
+
 		li{
-			display: flex;
+			width: 90%;
+			// display: flex;
 			// margin:5px 0;
 			@include pad(){
-					width: 50%;
+				width: 40%;
 			}
-			@include iphoneX(){
+			@include iphone6(){
 				width: auto;
 			}
 				
 			a{
-				display: flex;
-				width: 200px;
+				display: block;
+
+				// width: 200px;
 				padding:10px 2px;
 				text-decoration: none;
 				color:#000;
@@ -64,12 +61,12 @@
 				transition: background-color .35s ease;
 
 				span{
-					@include  iphoneX(){
+					@include  iphone6(){
 						display: none;
 
 					}
 				}
-				@include iphoneX(){
+				@include iphone6(){
 					width: 80px;
 					justify-content: center;
 					border-bottom:2px solid $linkcolor;
@@ -77,13 +74,13 @@
 				}
 				&:hover{
 					background-color: $linkcolor;
-					@include iphoneX(){
+					@include iphone6(){
 						background-color: transparent;
 					}
 				}
 				&.active{
 					background-color:$linkcolor;
-					@include iphoneX(){
+					@include iphone6(){
 
 						border-top: 2px solid $linkcolor;
 						border-right: 2px solid $linkcolor;
@@ -102,81 +99,93 @@
 		
 	}
 }
-.search{
-	border:2px solid green;
-	width: 330px;
-	height: 40px;
-	position: relative;
-	i{
-		width: 40px;
-		height: 40px;
-		background-color: green;
-		position: absolute;
-		right: 0;
-		top: -2px;
-		color:#fff;
-		text-align: center;
-		padding: 10px 0px;
-		font-size: 20px;
-	}
-	@include pad(){
-		margin: 20px 10px;
-	}
-	@include iphoneX(){
-		
-		width: 80%;
-	}
-}
-.cart{
-	margin-left: 15%;
-	font-size:25px;
-	margin-top: 10px;
-	height: 30px;
-	a{
-		text-decoration: none;
-		color:#000000;
 
-		span{
-			text-decoration: none;		   
-		    position: relative;
-		    &:after{
-			    content: " ";
-			    height: 25px;
-			    position: absolute;
-			    border-right: 2px solid #000;
-			    right: -15px;
-			}
-
-		}
-		i{
-			margin-left:30px;
-		}
-		&:hover{
-			color:brown;
-		}
-	}
-	@include pad(){
-		margin:25px 10px;
-	}
 	
-}
 .food-Menu{
 	display: flex;
-	margin:-15% 10px 10px 28%;
+	flex-wrap: wrap;
+	margin:-20% 10px 50px 30%;
 	@include pad() {
 	margin:20px 20px;
+	}
+	.food-search{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		.search{
+			border:2px solid green;
+			min-width: 200px;
+			height: 40px;
+			@include pad() {
+					width: 50%;
+			}
+			
+		}
+		.sec-icon{
+				width: 40px;
+				height: 40px;
+				background-color: green;
+				// position: absolute;
+				// right: 0;
+				// top: -2px;
+				color:#fff;
+				text-align: center;
+				padding: 10px 10px;
+				font-size: 20px;
+		}
+		.cart{
+			
+				margin-left: 5%;
+				font-size:25px;
+				margin-top: 10px;
+				height: 30px;
+				text-decoration: none;
+				color:#000000;
+				display: block;
+				@include pad() {
+					width: 50%;
+					text-align: center;
+			    } 
+				
+
+				span{
+					text-decoration: none;		   
+				    position: relative;
+				    &:after{
+					    content: " ";
+					    height: 25px;
+					    position: absolute;
+					    border-right: 2px solid #000;
+					    right: -15px;
+					}
+				}
+
+				i{
+					margin-left:30px;
+				}
+				&:hover{
+					color:brown;
+				}
+
+			@include pad(){
+				margin:5px 10px;
+			}
+		}
 	}
 	
 	ul{
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
+		margin-top:50px;
 		@include pad(){
 			justify-content: center;
 		}
 		li{
 			width: 30%;
-			height: 300px;
+			height: 350px;
 			display: flex;
 			flex-wrap: wrap;
 			align-content:flex-start;
@@ -189,7 +198,7 @@
 			@include pad(){
 				width: 40%;
 			}
-			@include iphoneX(){
+			@include iphone6(){
 				width: 80%;
 			}
 			.menu-icon{

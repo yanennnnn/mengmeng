@@ -1,0 +1,90 @@
+
+
+.reg{
+	width: 70%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin:0 auto;
+	@include iphone6(){
+		width: 100%;
+	}
+	.reg-tit{
+		margin:10px 0;
+		width: 50%;
+		display: flex;
+		justify-content: center;
+		padding:0 40px;
+		flex-wrap: wrap;
+		@include iphone6(){
+			width:70%;
+		}
+		p{
+			margin-top: -10px;
+		}
+	}
+	form{
+		padding:15px 15px;
+		width: 50%;
+		margin:20px 20px 50px 20px;
+		background-color: $linkcolor;
+		border-top:2px solid green;
+		// border-bottom:2px solid green;
+		box-shadow: 3px 3px 5px -1px gray;
+		@include pad(){
+			width: 70%;
+		}
+		@include iphone6(){
+			width:90%;
+		}
+		p{
+			text-align: center;
+			font-size: 30px;
+			font-weight: bold;
+			margin-bottom: 35px;
+			margin-top:10px;
+		}
+		label{
+			display: block;
+			margin-top:20px;
+			font-size: 18px;
+			
+			span{
+				color:red;
+				padding-left: 3px;
+			}
+		}
+		#email,#psw,#user,#birth{
+			height: 32px;
+			width: 95%;
+			border-radius: 2px;
+			border:none;
+			margin-top: 8px;
+			text-indent: 10px;
+		
+		}
+		a{
+			display: block;
+			font-size:14px;
+			text-decoration: none;
+			color:red;
+			margin:10px 0 15px 0;
+			&:hover{
+				color:brown;
+			}
+		}
+		input[type=submit]{
+	    	padding:5px 10px;
+	    	border:none;
+	    	border-radius: 5px;
+	    	cursor: pointer;
+	    	color:#ffffff;
+	    	margin-left: 27%;
+	    	margin-top: 6%;
+	    	margin-bottom: 5%;
+	    	width: 40%;
+	    	height: 30px;
+	    	background-color:green;
+		}
+	}
+}

@@ -10,8 +10,8 @@ $linkfont:cursive;
 	}
 }
 
-@mixin iphoneX{
-	@media(max-width: 376px){
+@mixin iphone6{
+	@media(max-width: 415px){
 		@content
 	}
 }
@@ -22,6 +22,7 @@ $linkfont:cursive;
 
 }
 
+
 .header{
 	display:flex;
 	flex-wrap: wrap;
@@ -29,22 +30,18 @@ $linkfont:cursive;
 	// height: 300px;
 	// background-color:$linkcolor;
 	position: relative;
-
-	
+	width: 100%;
+	// height: 60px;
+	display: flex;
+	justify-content:space-between;
+	background-color:rgba(255,255,255,0.8);
+	z-index: 97;
+	@include pad(){
+		height:auto;
 	}
-	.bar{
-		width: 100%;
-		// height: 60px;
-		display: flex;
-		justify-content:space-between;
-		background-color:rgba(255,255,255,0.8);
-		z-index: 97;
-		@include pad(){
-		    	height:auto;
-		    }
 
-		h1{
-			a{
+	h1{
+		a{
 			background-image: url(../imgs/logo-243.svg);
 			background-repeat: no-repeat;
 			display: block;
@@ -54,78 +51,67 @@ $linkfont:cursive;
 			@include hide-indent;
 			margin-left: 10px;
 			margin-top:3px;
-		    }
 		}
+	}
 
-		.menu{
-			display: flex;
-			@include pad(){
-				max-height:0;
-				display:block;
-				overflow: hidden;
-				text-align: center;
-				transition: max-height 1.5s ease;
-				position: absolute;
-				z-index: 100;
-				right: 0;
-				left: 0;
-				top: 49px;
-				background-color: rgba(199,220,209,0.8);
-			}
-			li{
-				padding:0 0 0 3px;
-				a{
-					padding:17px 0px;
-					width: 100px;
-					font-size: 18px;
-					display: inline-flex;
-					align-items: center;
-					justify-content: center;
-					text-decoration: none;
-					color: #000000;
-					font-weight: bold;
+	.menu{
+		display: flex;
+		@include pad(){
+			max-height:0;
+			display:block;
+			overflow: hidden;
+			text-align: center;
+			transition: max-height 1.5s ease;
+			position: absolute;
+			z-index: 100;
+			right: 0;
+			left: 0;
+			top: 49px;
+			background-color: rgba(199,220,209,0.8);
+		}
+		li{
+			padding:0 0 0 3px;
+			a{
+				padding:17px 0px;
+				width: 100px;
+				font-size: 18px;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				text-decoration: none;
+				color: #000000;
+				font-weight: bold;
 
-					
-					&:hover{
-
-						background-color: $linkcolor;
-						opacity: 0.5;
-						color: $linkfontcolor;
-						transition:0.7s ease;
-					}
-					i{
-						font-size: 14px;
-						padding-right: 2px;
-					}
-					@include pad(){
-						padding:10px 0;
-						width: 100%;
-						color:$linkfontcolor;
-					}
-				}
 				
-		    }
-		}
-		.show-menu{
-			display: none;
-			@include pad(){
-				display: flex;
-			    flex-wrap: wrap;
-			    width: 40px;
-			    margin: 8px 6px 0 0;
-			    li{
-				   display: flex;
-				   width: 40px;
-				   height: 4px;
-				   margin:2px 0px;
-				   border-radius: 100px;
-				   background-color:#3f5d45;
-			    }
-			    &:hover{
-			    	cursor: pointer;
-			    }
+				&:hover{
+
+					background-color: $linkcolor;
+					opacity: 0.5;
+					color: $linkfontcolor;
+					transition:0.7s ease;
+				}
+				i{
+					font-size: 14px;
+					padding-right: 2px;
+				}
+				@include pad(){
+					padding:10px 0;
+					width: 100%;
+					color:$linkfontcolor;
+				}
 			}
-		}	
+			
+		}
+	}
+	.show-menu{
+		display: none;
+		@include pad(){
+			display: block;
+			color:#3f5d45;
+			text-decoration: none;
+			padding-right: 10px;
+		}
+	}	
 }
 .menuList .menu{
  	max-height: 153px;
@@ -142,9 +128,9 @@ $linkfont:cursive;
     align-items: center;
 	margin-top: -52px;
 	@include pad(){
-		padding-bottom: 45%;
+		padding-bottom: 55%;
 	}
-	@include iphoneX(){
+	@include iphone6(){
 		background-image: url(../imgs/banner-s.jpg);
 		padding-bottom: 70%;
 	}
@@ -153,17 +139,22 @@ $linkfont:cursive;
 		width:50%;
 		// height: auto;
 		background-color: rgba(255,255,255,0.8);
-		margin-top: 370px;
-		padding:30px 0;
+		margin-top: 350px;
+		padding:25px 0;
 		border-radius: 2%;
 		box-shadow:0px 4px 4px -1.5px #8e8e8e;
 		@include pad(){
-			margin-top: 350px;
+			h2{
+				display: none;
+			}
+			margin-top: 300px;
 			width:53%;
 		}
-		@include iphoneX(){
+		@include iphone6(){
 			margin-top: 300px;
 			width:100%;
+			max-height: 200px;
+		    display: none;
 		}
 		h2{
 			font-size: $link-h2;
@@ -175,7 +166,7 @@ $linkfont:cursive;
 				font-size: 28px;
 				letter-spacing: 0.1em;
 			}
-			@include iphoneX(){
+			@include iphone6(){
 				font-size:$linkiphone-h2;
 				letter-spacing:0.1em;
 				margin-bottom: 20px;
@@ -188,7 +179,7 @@ $linkfont:cursive;
 			span{
 				color: #3f5d45;
 			}
-			@include iphoneX(){
+			@include iphone6(){
 				font-size:$linkiphone-p;
 				margin-top:5px;
 			}
@@ -206,8 +197,8 @@ $linkfont:cursive;
 	background-color: $linkcolor;
 	color:$linkfontcolor;
 
-	@include iphoneX(){
-				justify-content: center;
+	@include pad(){
+				justify-content: around;
 				flex-wrap: wrap;
 				text-align: center;
 			}
@@ -217,7 +208,7 @@ $linkfont:cursive;
 		@include pad(){
 				width: 30%;
 			}	
-		@include iphoneX(){
+		@include iphone6(){
 				width: 100%;
 				padding:0px 20px;
 			}	
@@ -227,7 +218,7 @@ $linkfont:cursive;
 		}
 	
 		p{
-			@include iphoneX(){
+			@include iphone6(){
 				text-align: left;
 			}
 		}
@@ -235,14 +226,17 @@ $linkfont:cursive;
 	.contact{
 		width: 30%;
 		margin-bottom: 10px;
-		@include iphoneX(){
+		@include pad(){
+			width: 50%;
+		}
+		@include iphone6(){
 				width: 100%;
 				padding:0px 20px;
 			}
 		h5{
 			font-size:20px;
 			margin-bottom: 10px;
-			@include iphoneX(){
+			@include iphone6(){
 				margin-top: 15px;
 			}
 		}
@@ -252,7 +246,7 @@ $linkfont:cursive;
 			li{
 				padding:2px 0;
 			}
-			@include iphoneX(){
+			@include iphone6(){
 				text-align: left;
 			}
 
@@ -265,12 +259,12 @@ $linkfont:cursive;
 		justify-content: flex-end;
 		align-content: flex-start;
 		@include pad(){
-			width: 20%;
+			width: 50%;
 			padding-left:10px;
 
 		}	
-		@include iphoneX(){
-			width: 50%;
+		@include iphone6(){
+			width: 90%;
 			justify-content: center;
 		}
 		
@@ -279,9 +273,9 @@ $linkfont:cursive;
 			align-self: center;
 			margin-bottom: 10px;
 			margin-top:10px;
-			width: 243px;
-			height: 51px;
-			@include iphoneX(){
+			max-width: 243px;
+			max-height: 51px;
+			@include iphone6(){
 				margin-bottom: 5px;
 				padding:0 5px;
 			}
@@ -289,6 +283,7 @@ $linkfont:cursive;
 		}
 		a{
 			padding:3px;
+			align-self: center;
 
 		}
 	}

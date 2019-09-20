@@ -7,14 +7,14 @@
     <meta name='description' content='最正統手工港式餐點' /> 
     <meta name="keywords" content="meng港點,港點,港式餐點,港式飲茶,蒸餃">
     <meta property="og:title" content="meng港點" />
-    <meta property="og:description" content="用最熱情的心看待每一份港市餐點">
+    <meta property="og:description" content="用最熱情的心看待每一份港式餐點">
 <!--<meta property="og:type" content="website" />
     <meta property="og:url" content="FB上的網址" /> -->
     <!-- <meta property="og:image" content="FB的圖片" /> -->
 <!--     <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexschool-api.appspot.com/o/web%2Fevents%2F2019-js-starter%2Ffb-cover.png?alt=media&amp;token=6d679c21-c0aa-454a-ad16-78c55b91dd50"> --> 
     <!-- <link href="圖片路徑" rel="apple-touch-icon" /> -->
      <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	<link rel="stylesheet" type="text/css" href="Css/shop.css">
+	<link rel="stylesheet" type="text/css" href="Css/all.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script type="text/javascript" src="JS/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="JS/layout.js"></script>
@@ -24,20 +24,16 @@
 <body>
 	<div class="wrap">
 		<div class="header">
-			<div class="bar">
 				<h1><a href="index.html">meng港點</a></h1>
 				<ul class="menu">
 					<li><a href="index.html" >首頁</a></li>
-					<li><a href="Cart Desktop.html" target="_blank">美味餐點</a></li>
+					<li><a href="Shop.html" target="_blank">美味餐點</a></li>
 					<li><a href="Longin.html">會員登入</a></li>
 					<li><a href="Cart.html"><i class="fas fa-shopping-cart"></i>購物車</a></li>
 				</ul>
-				<ul href="#" class="show-menu">
-					<li></li>
-					<li></li>
-					<li></li>
-				</ul>
-			</div>
+				<a href="#" class="show-menu">
+					<i class="fas fa-bars fa-2x" style="margin-top: 10px;"></i>
+				</a>
 			
 		</div>
 		<div class="banner">
@@ -57,15 +53,15 @@
 					<li><a href="#">經典小吃<span>(1)</span></a></li>
 				</ul>
 			</div>
-			<div class="search">
-				<i class="fas fa-search"></i>
-			</div>
-			<div class="cart">
-				<a href="Cart.html">
-			        <span >結帳去</span><i class="fas fa-shopping-cart"></i>
-			    </a>
-			</div>
-		    <div class="food-Menu">
+			<div class="food-Menu">
+				<div class="food-search">
+					<input class="search" type="text">
+					<i class="fas fa-search sec-icon"></i>
+                    <a href="Cart.html" class="cart">
+				       	 <span >結帳去</span><i class="fas fa-shopping-cart"></i>
+				    </a>
+				</div>
+		    
 		    	<ul>
 		    		<li><img src="imgs/buy-food1.jpg">
 					    <div></div>
